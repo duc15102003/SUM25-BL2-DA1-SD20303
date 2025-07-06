@@ -5,7 +5,7 @@ CREATE TABLE sanpham (
     id INT PRIMARY KEY IDENTITY(1,1),
     ten VARCHAR(100),
     gia DECIMAL(10,2),
-    size VARCHAR(10),
+    size INT,
     mau VARCHAR(50),
     soluong INT
 );
@@ -21,7 +21,7 @@ CREATE TABLE giohang (
     id INT PRIMARY KEY IDENTITY(1,1),
     khachhang_id INT,
     tongtien DECIMAL(10,2),
-    ngay DATETIME DEFAULT GETDATE(), -- SQL Server dùng GETDATE() thay cho CURRENT_TIMESTAMP
+    ngay DATETIME DEFAULT GETDATE(), -- SQL Server dÃ¹ng GETDATE() thay cho CURRENT_TIMESTAMP
     FOREIGN KEY (khachhang_id) REFERENCES khachhang(id)
 );
 
